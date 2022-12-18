@@ -39,6 +39,7 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         >
           <Text>Holis</Text>
+          
       </ScrollView>
     </SafeAreaView>
   );
