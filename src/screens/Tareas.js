@@ -13,14 +13,14 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Button
 } from 'react-native';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {Botton, Stack} from '@rneui/themed';
+import {Icon} from '@rneui/themed';
 import 'react-native-gesture-handler';
 import  Header  from "../components/AppHeader"
 import { useNavigation } from '@react-navigation/native';
+
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
@@ -34,16 +34,24 @@ const Tareas = () => {
 
   return (
     <SafeAreaProvider>
-       <Header title= "Tareas"/>
+       <Header title= "Tareas"
+           leftComponent={
+            (
+              <View style={styles.headerRight}>
+                <TouchableOpacity
+                 onPress={()=>navigateTo("Home")}
+                  style={{ marginLeft: 10 }}
+                >
+                  <Icon type="antdesign" name="left" color="white" />
+                </TouchableOpacity>
+              </View>
+            )
+      
+          }/>
         <View   style={{...styles.viewGrid}}>
           <TouchableOpacity style={{...styles.buttonGrid, backgroundColor:"#b22222"}}>
             <Text style={styles.textButton}>Tareas</Text>
           </TouchableOpacity>
-        <Button
-          title="Back Home"
-          color="#b22222"
-          onPress={()=>navigateTo("Home")}
-        />
         </View>
     </SafeAreaProvider>
   );

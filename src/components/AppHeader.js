@@ -13,21 +13,26 @@ import {
   View,
   TurboModuleRegistry,
 } from 'react-native';
-import { Header, Icon } from '@rneui/themed';
+import { Header, Icon, Avatar } from '@rneui/themed';
 
 
 const AppHeader = (props) => {
   const {title = "Pilar Tecno", rightComponent, leftComponent} =props
 return (
+
   <Header
+    
+    backgroundColor="#be241c" 
     leftComponent={leftComponent?leftComponent:null}
     rightComponent={rightComponent?rightComponent:
       (
         <View style={styles.headerRight}>
-          <TouchableOpacity
-            style={{ marginLeft: 10 }}
-          >
-            <Icon type="antdesign" name="rocket1" color="white" />
+          <TouchableOpacity style={{ marginLeft: 10 }}>
+          <Avatar
+            size={32}
+            rounded
+            source={ require("../assest/imagenes/avatar.png") }
+            />
           </TouchableOpacity>
         </View>
       )
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#397af8',
+    backgroundColor: 'red',
     marginBottom: 20,
     width: '100%',
     paddingVertical: 15,

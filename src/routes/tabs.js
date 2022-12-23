@@ -3,13 +3,13 @@ import Home from "../screens/Home"
 import Profile from "../screens/Profile"
 import GoogleMaps from '../screens/GoogleMaps';
 import List from '../screens/List';
-import Tareas from '../screens/Tareas';
 import { Icon } from '@rneui/base';
 
 const Tab = createMaterialBottomTabNavigator();
 const TAB_COLOR = "#bd1b16"
 
-export const Tabs = () => {
+
+const Tabs = () => {
   return (
     <Tab.Navigator
     
@@ -65,3 +65,5 @@ export const Tabs = () => {
     </Tab.Navigator>
   );
 }
+
+export default Tabs;

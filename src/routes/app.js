@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import {Tabs} from './tabs';
+import Tabs from './tabs';
 import Login from '../screens/Login';
 import Tareas from '../screens/Tareas';
 
@@ -17,7 +17,7 @@ export const AppStack = () => {
             :
             <Stack.Screen name="Login" component={Login} />
         }
-        <Stack.Screen name="Tareas" component={Tareas} />
+    <Stack.Screen name="Tareas" component={Tareas} />
     </Stack.Navigator>
   );
 }
