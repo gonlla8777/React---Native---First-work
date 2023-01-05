@@ -10,14 +10,19 @@ import React from 'react';
 import {
   TouchableOpacity,
   StyleSheet,
-  View,
-  TurboModuleRegistry,
+  View,Alert
 } from 'react-native';
-import { Header, Icon, Avatar } from '@rneui/themed';
+import { Header, Icon, Avatar, Button } from '@rneui/themed';
+import {useDispatch} from "react-redux";
+import { appActions} from '../redux/appRedux';
 
 
 const AppHeader = (props) => {
   const {title = "Pilar Tecno", rightComponent, leftComponent} =props
+  const dispatch = useDispatch()
+  const setExit = () => {
+    dispatch(appActions.setUser(false))
+  }
 return (
 
   <Header
@@ -27,11 +32,22 @@ return (
     rightComponent={rightComponent?rightComponent:
       (
         <View style={styles.headerRight}>
-          <TouchableOpacity style={{ marginLeft: 10 }}>
+          <TouchableOpacity style={{ marginLeft: 10 }} onPress={()=> {
+            Alert.alert(
+              'Exit App',
+              'Do you want to exit?',
+              [
+                {text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'Yes', onPress: () => setExit()},
+              ]
+            )
+          } }>
           <Avatar
             size={32}
             rounded
-            source={ require("../assest/imagenes/avatar.png") }
+            source={ require("../assest/imagenes/avatar.png")
+          }
+
             />
           </TouchableOpacity>
         </View>

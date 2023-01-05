@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   Dimensions,
@@ -13,24 +5,42 @@ import {
   Text,
   TouchableOpacity,
   View,
+
 } from 'react-native';
 
+
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {Botton, Stack} from '@rneui/themed';
+import {Button, Stack} from '@rneui/themed';
 import 'react-native-gesture-handler';
+import {useDispatch} from "react-redux";
+import { appActions} from '../redux/appRedux';
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 
 const Login = () => {
+  
+  const dispatch = useDispatch()
+  const setAuth = () => {
+    dispatch(appActions.setUser({name:"Gonzalo", lastname:"Llanos"}))
+  }
 
   return (
     <SafeAreaProvider>
 
-        <View style={{...styles.viewGrid, justifyContent:"flex-end", paddingBottom:"5%"}}>
-            <TouchableOpacity style={{...styles.buttonGrid, backgroundColor:"#b22222"}}>
-                <Text style={styles.textButton}>LOGIN</Text>
-            </TouchableOpacity>
+        <View style={{...styles.viewGrid, justifyContent:"center", paddingBottom:"5%"}}>
+            <Button title="Ingresar" onPress={() => setAuth()} loadingProps={{ size: 'small', color: 'white' }}
+              buttonStyle={{
+                backgroundColor: '#b22222',
+                borderRadius: 5,
+              }}
+              titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+              containerStyle={{
+                marginHorizontal: 50,
+                height: 100,
+                width: 250,
+                marginVertical: 10,
+              }}/>
         </View>
 
 

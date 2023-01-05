@@ -27,6 +27,8 @@ import 'react-native-gesture-handler';
 import {AppStack} from "../routes/app";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import {Provider} from "react-redux";
+import store from "../redux/store";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
@@ -34,9 +36,11 @@ const HEIGHT = Dimensions.get("window").height;
 const App = () => {
 
   return (
-    <NavigationContainer>
-      <AppStack /> 
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <AppStack /> 
+      </NavigationContainer>
+    </Provider>
   );
 };
 
