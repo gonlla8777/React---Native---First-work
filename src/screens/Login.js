@@ -7,8 +7,6 @@ import {
   View,
 
 } from 'react-native';
-
-
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {Button, Stack} from '@rneui/themed';
 import 'react-native-gesture-handler';

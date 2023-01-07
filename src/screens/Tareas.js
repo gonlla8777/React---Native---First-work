@@ -7,7 +7,6 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {Icon} from '@rneui/themed';
 import 'react-native-gesture-handler';

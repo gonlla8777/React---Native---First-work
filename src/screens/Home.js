@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   Dimensions,
@@ -19,7 +11,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {Botton, Stack} from '@rneui/themed';
 import Header from '../components/AppHeader';
